@@ -43,8 +43,8 @@ public interface StackADT<T> {
 
     /**
 	 * Returns an iterator over the elements in this stack.
-	 * Pre-condition: 
-     * Post-condition: 
+	 * Pre-condition: The stack is not empty.
+     * Post-condition: The stack remains unchanged.
 	 * @return an iterator over the elements in this stack in proper sequence.
 	 */
 	public Iterator<T> iterator();

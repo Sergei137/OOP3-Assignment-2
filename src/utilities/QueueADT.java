@@ -9,10 +9,10 @@ import java.util.NoSuchElementException;
  */
 public interface QueueADT<T> {
     /**
-     * Adds one element to the rear of this queue.
+     * Adds one element to this queue.
      * Pre-condition: none
-     * Post-condition: The element is added to the rear of the queue.
-     * @param element the element to be added to the rear of the queue
+     * Post-condition: The element is added to the the queue.
+     * @param element the element is added to the queue
      */
     public void enqueue(T element) throws NullPointerException;
 
@@ -43,8 +43,8 @@ public interface QueueADT<T> {
 
     /**
 	 * Returns an iterator over the elements in this queue in proper sequence.
-	 * Pre-condition: 
-     * Post-condition:
+	 * Pre-condition: The queue is not empty.
+     * Post-condition: The queue remains unchanged.
 	 * @return an iterator over the elements in this queue in proper sequence.
 	 */
 	public Iterator<T> iterator();
@@ -59,7 +59,7 @@ public interface QueueADT<T> {
 
     /**
      * Returns the number of elements in this queue.
-     * Pre-condition: none
+     * Pre-condition: The queue is not empty.
      * Post-condition: The queue remains unchanged.
      * @return int the number of elements in the queue
      */
