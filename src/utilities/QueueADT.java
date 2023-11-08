@@ -1,5 +1,8 @@
 package utilities;
 
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+
 /**
  * QueueADT defines the interface to a queue collection.
  * @param <T> the type of elements held in this collection
@@ -11,7 +14,7 @@ public interface QueueADT<T> {
      * Post-condition: The element is added to the rear of the queue.
      * @param element the element to be added to the rear of the queue
      */
-    void enqueue(T element);
+    public void enqueue(T element) throws NullPointerException;
 
     /**
      * Removes and returns the element at the front of this queue.
@@ -20,16 +23,31 @@ public interface QueueADT<T> {
      * @return T the element at the front of the queue
      * @throws EmptyCollectionException if queue is empty - NOT IMPLEMENTED
      */
-    T dequeue();
+    public T dequeue() throws NoSuchElementException;
 
     /**
-     * Returns without removing the element at the front of this queue.
+	 * dequeueAll removes all items in the queue.
+     * Pre-condition: the queue is not empty.
+     * Post-condition: queue is empty.
+	 */
+	public void dequeueAll();
+    
+    /**
+     * Returns without removing the top element from this queue.
      * Pre-condition: The queue is not empty.
      * Post-condition: The queue remains unchanged.
-     * @return T the first element in the queue
-     * @throws EmptyCollectionException if queue is empty - NOT IMPLEMENTED
+     * @return T element on top of stack
+     * @throws NoSuchElementException if queue is empty.
      */
-    T first();
+    public T peek() throws NoSuchElementException;
+
+    /**
+	 * Returns an iterator over the elements in this queue in proper sequence.
+	 * Pre-condition: 
+     * Post-condition:
+	 * @return an iterator over the elements in this queue in proper sequence.
+	 */
+	public Iterator<T> iterator();
 
     /**
      * Returns true if this queue contains no elements.
@@ -37,7 +55,7 @@ public interface QueueADT<T> {
      * Post-condition: The queue remains unchanged.
      * @return boolean whether or not this queue is empty
      */
-    boolean isEmpty();
+    public boolean isEmpty();
 
     /**
      * Returns the number of elements in this queue.
@@ -45,5 +63,5 @@ public interface QueueADT<T> {
      * Post-condition: The queue remains unchanged.
      * @return int the number of elements in the queue
      */
-    int size();
+    public int size();
 }
