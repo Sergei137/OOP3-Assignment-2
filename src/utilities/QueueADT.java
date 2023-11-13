@@ -1,8 +1,14 @@
 package utilities;
 
+<<<<<<< HEAD
 import java.io.*;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
+import java.exceptions.EmptyQueueException; // change to no such element exception if not working
+=======
+import java.util.NoSuchElementException;
+import java.io.*;
+>>>>>>> 7520c9f (merge test)
 
 /**
  * This is the professional Queue Interface for Advanced Object 
@@ -34,18 +40,30 @@ public interface QueueADT<E> extends Serializable
 	/**
 	 * Dequeue will remove the first item that was placed in the Queue.
 	 * @return the first item in the Queue.
-	 * @throws ENoSuchElementException raised when the queue's length is zero (0).
+<<<<<<< HEAD
+	 * @throws EmptyQueueException raised when the queue's length is zero (0).
+	 */
+	public E dequeue() throws EmptyQueueException;
+=======
+	 * @throws NoSuchElementException raised when the queue's length is zero (0).
 	 */
 	public E dequeue() throws NoSuchElementException;
+>>>>>>> 7520c9f (merge test)
 	
 	/**
 	 * Peek provides a reference to the first item in the queue without
 	 * removing from the queue.
 	 * 
 	 * @return the first item in the queue.
+<<<<<<< HEAD
+	 * @throws EmptyQueueException raised when the queue's length is zero (0).
+	 */
+	public E peek() throws EmptyQueueException;
+=======
 	 * @throws NoSuchElementException raised when the queue's length is zero (0).
 	 */
 	public E peek() throws NoSuchElementException;
+>>>>>>> 7520c9f (merge test)
 	
 	/**
 	 * dequeueAll removes all items in the queue.
